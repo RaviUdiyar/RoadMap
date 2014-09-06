@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+
+<body>
+
+<div id = 'map'></div>
+<div class='sec-pane'>
+	<h1>RoadMap</h1>
+	<input id='inp' type="search", autofocus />  	
+	<button type="button" id="buttn">Search</button>	
+	Result <%= @coord1 %>
+</div>
+
+<script>
+
+
+$("#buttn").click(function(){
+	value = $('#inp').val();
+	//alert(<%=@coord1%>);
+	$.ajax({
+        type: 'PUT', 
+        url: 'app/controllers/pages_controller.js', 
+        dataType: 'javascript',
+        data: { coord: value }
+      
+    });
+});
+
+	
+var map = L.map('map',{zoomControl: false}).setView([15.51976,73.76650],13);
+L.tileLayer('http://otile1.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>' }).addTo(map);
+
+
+</script>
+
+</body>
+
+</html>
