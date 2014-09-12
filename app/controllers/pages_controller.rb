@@ -1,15 +1,20 @@
 
 class PagesController < ApplicationController
-  
-	attr_accessor :coord1 , :coord
-  respond_to do |format|
-  	format.js 
-  end
-  def main
-  	#@coord =(params [:value ])
-  	@element = Nokogiri::HTML(open("app/views/pages/main.html.erb"))
-  	@coord = @element.at('input')['value']
-  	@coord1 = Geocoder.coordinates("#{@coord}")
+ 
 
+  def main
+     @coord2 = params[:val] 
+     Gon.global.coord = @coord2 
+     #Gon.watch.coord3 = @coord2
+     #puts gon.coord3
+      puts gon.global.coord
+     @coord1 = Geocoder.coordinates("#{@coord2}")
+     Gon.global.coordLatLong = @coord1
+     puts gon.global.coordLatLong
+     render 'main'
+  end
+
+  def search
+     
   end
 end

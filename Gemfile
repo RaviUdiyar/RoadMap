@@ -25,9 +25,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 #Use Gecoder for loaction searching
 gem 'geocoder'
-#Use nokogiri HTML parser 
-gem 'nokogiri'
 
+#Gon gem for passing data to js file
+gem 'gon'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
