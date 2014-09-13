@@ -13,23 +13,19 @@
  *= require_tree .
  *= require_self
  */
-
-#map {
-	
+h1 {
+	font-family:'PT Sans', sans-serif;
+}
+#map {	
 	position: absolute;
 	top:0;
 	right:0;
 	bottom:0;
 	left:0; 
-	
 	z-index:-1px; 
 	overflow: hidden;
 	
 }
-body{
-	
-}
-
 .sec-pane {
 	position:absolute; 
 	top:0px;

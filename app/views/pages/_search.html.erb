@@ -1,0 +1,9 @@
+<%= javascript_include_tag 'search' %>
+<%= render :partial => 'main'%>
+
+<script>
+ 	map.setView(<%=j @coord1 %>,15);
+  	L.tileLayer('http://otile1.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>' }).addTo(map);
+  	L.marker(<%=j @coord1 %>).addTo(map);
+</script>
+

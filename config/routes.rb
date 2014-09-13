@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   get 'pages/main'
-   
+  #get 'pages/search'
   match '/main' , :to => 'pages#main' , via: [:get,:post,:put]
   match '/search', :to => 'pages#search' , via: [:get,:post,:put] 
- 
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

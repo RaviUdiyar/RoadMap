@@ -1,61 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>	
-
-	<%= csrf_meta_tags %>
+<head>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:700' rel='stylesheet' type='text/css'>
 </head>
-
 <body>
+<div class='main-pane'>
+  
+   <%= render :partial => 'main'%>
+</div>  
 
-<div id = 'map'></div>
-  <div class='sec-pane'>
-	   <h1>RoadMap</h1>
-	
-    <!--<%= form_tag search_path, :id => 'srchform', :method => 'get' do %>  
-  		<p>  
-          <%= text_field_tag "search" , params[:search] %>   
-          <button type="button" class="srch" >Search</button>
-  		</p> <input id='inp' type="search", autofocus , params[:search]/>
-	   <% end %> -->
-	     
-      <%= text_field_tag "search" %> 
-      <%= submit_tag "Search", :name => nil , :id => 'srch' %>
-      
-	   Result <%= @coord2 %><br/>
-	   Result <%= @coord1 %>
-	
-  </div>
-
-<script>
-$("#srch").click(function(){
-	value = $('#search').val();
-  alert(gon.global.coord)
- $.ajax({
-        type: 'post', 
-        url: 'main',
-       	//contentType: 'application/json',
-        //dataType: 'json',
-        data: {val:value},
-      	//accept:'json',
-      	success: function(){alert(gon.global.coord)
-                gon.clear_all;
-        },
-      	error :function(xhr,status,error){
-    			console.log(error);
-    			
-  			}
-        
-    }); 
-});
-
-  var map = L.map('map',{zoomControl: false}).setView([15.51976,73.76650],13);
-  L.tileLayer('http://otile1.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>' }).addTo(map);
-function setMap (){  
-  alert(gon.global.coord)
-  map.setView(gon.global.coordLatLong,13);
-
-}
-</script>
  
 </body>
 
